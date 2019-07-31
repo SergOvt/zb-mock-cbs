@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://ws.validations.bet.datacentre.co.zw/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.validations.bet.datacentre.co.zw/" targetNamespace="http://ws.validations.bet.datacentre.co.zw/">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ws.validations.bet.datacentre.co.zw/" version="1.0">
+
+    <xs:element name="getAccountBalance" type="tns:getAccountBalance"/>
+
+    <xs:element name="getAccountBalanceResponse" type="tns:getAccountBalanceResponse"/>
+
+    <xs:element name="getAccountDetails" type="tns:getAccountDetails"/>
+
+    <xs:element name="getAccountDetailsResponse" type="tns:getAccountDetailsResponse"/>
+
+    <xs:element name="getAccounts" type="tns:getAccounts"/>
+
+    <xs:element name="getAccountsResponse" type="tns:getAccountsResponse"/>
+
+    <xs:element name="processMiniStatement" type="tns:processMiniStatement"/>
+
+    <xs:element name="processMiniStatementResponse" type="tns:processMiniStatementResponse"/>
+
+    <xs:element name="validateAccount" type="tns:validateAccount"/>
+
+    <xs:element name="validateAccountResponse" type="tns:validateAccountResponse"/>
+
+    <xs:element name="validateAgentAccount" type="tns:validateAgentAccount"/>
+
+    <xs:element name="validateAgentAccountResponse" type="tns:validateAgentAccountResponse"/>
+
+    <xs:element name="validateCustomer" type="tns:validateCustomer"/>
+
+    <xs:element name="validateCustomerResponse" type="tns:validateCustomerResponse"/>
+
+    <xs:element name="validateMobileNumber" type="tns:validateMobileNumber"/>
+
+    <xs:element name="validateMobileNumberResponse" type="tns:validateMobileNumberResponse"/>
+
+    <xs:complexType name="validateMobileNumber">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="validateMobileNumberResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="response">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="narrative" type="xs:string"/>
+            <xs:element minOccurs="0" name="status" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="validateAccount">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="validateAccountResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getAccountBalance">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getAccountBalanceResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:account"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="account">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="accountName" type="xs:string"/>
+            <xs:element minOccurs="0" name="accountNumber" type="xs:string"/>
+            <xs:element minOccurs="0" name="accountType" type="xs:string"/>
+            <xs:element minOccurs="0" name="availableBalance" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="currency" type="xs:string"/>
+            <xs:element minOccurs="0" name="ledgerBalance" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="validateCustomer">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+            <xs:element minOccurs="0" name="nationalId" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="validateCustomerResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getAccountDetails">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getAccountDetailsResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:account"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="processMiniStatement">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="processMiniStatementResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="validateAgentAccount">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="accountNumber" type="xs:string"/>
+            <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="validateAgentAccountResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getAccounts">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+            <xs:element minOccurs="0" name="nationalId" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getAccountsResponse">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:account"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="validateMobileNumber">
+    <wsdl:part element="tns:validateMobileNumber" name="validateMobileNumber">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAccountBalanceResponse">
+    <wsdl:part element="tns:getAccountBalanceResponse" name="getAccountBalanceResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAccountBalance">
+    <wsdl:part element="tns:getAccountBalance" name="getAccountBalance">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAccountDetails">
+    <wsdl:part element="tns:getAccountDetails" name="getAccountDetails">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAccountDetailsResponse">
+    <wsdl:part element="tns:getAccountDetailsResponse" name="getAccountDetailsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAccountsResponse">
+    <wsdl:part element="tns:getAccountsResponse" name="getAccountsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validateCustomerResponse">
+    <wsdl:part element="tns:validateCustomerResponse" name="validateCustomerResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validateAccountResponse">
+    <wsdl:part element="tns:validateAccountResponse" name="validateAccountResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validateAgentAccountResponse">
+    <wsdl:part element="tns:validateAgentAccountResponse" name="validateAgentAccountResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validateAccount">
+    <wsdl:part element="tns:validateAccount" name="validateAccount">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validateMobileNumberResponse">
+    <wsdl:part element="tns:validateMobileNumberResponse" name="validateMobileNumberResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="processMiniStatement">
+    <wsdl:part element="tns:processMiniStatement" name="processMiniStatement">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validateCustomer">
+    <wsdl:part element="tns:validateCustomer" name="validateCustomer">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validateAgentAccount">
+    <wsdl:part element="tns:validateAgentAccount" name="validateAgentAccount">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAccounts">
+    <wsdl:part element="tns:getAccounts" name="getAccounts">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="processMiniStatementResponse">
+    <wsdl:part element="tns:processMiniStatementResponse" name="processMiniStatementResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ValidationService">
+    <wsdl:operation name="validateMobileNumber">
+      <wsdl:input message="tns:validateMobileNumber" name="validateMobileNumber">
+    </wsdl:input>
+      <wsdl:output message="tns:validateMobileNumberResponse" name="validateMobileNumberResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountBalance">
+      <wsdl:input message="tns:getAccountBalance" name="getAccountBalance">
+    </wsdl:input>
+      <wsdl:output message="tns:getAccountBalanceResponse" name="getAccountBalanceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountDetails">
+      <wsdl:input message="tns:getAccountDetails" name="getAccountDetails">
+    </wsdl:input>
+      <wsdl:output message="tns:getAccountDetailsResponse" name="getAccountDetailsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccounts">
+      <wsdl:input message="tns:getAccounts" name="getAccounts">
+    </wsdl:input>
+      <wsdl:output message="tns:getAccountsResponse" name="getAccountsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateCustomer">
+      <wsdl:input message="tns:validateCustomer" name="validateCustomer">
+    </wsdl:input>
+      <wsdl:output message="tns:validateCustomerResponse" name="validateCustomerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateAccount">
+      <wsdl:input message="tns:validateAccount" name="validateAccount">
+    </wsdl:input>
+      <wsdl:output message="tns:validateAccountResponse" name="validateAccountResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateAgentAccount">
+      <wsdl:input message="tns:validateAgentAccount" name="validateAgentAccount">
+    </wsdl:input>
+      <wsdl:output message="tns:validateAgentAccountResponse" name="validateAgentAccountResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="processMiniStatement">
+      <wsdl:input message="tns:processMiniStatement" name="processMiniStatement">
+    </wsdl:input>
+      <wsdl:output message="tns:processMiniStatementResponse" name="processMiniStatementResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ValidationServiceSoap11" type="tns:ValidationService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="validateMobileNumber">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="validateMobileNumber">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="validateMobileNumberResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountBalance">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getAccountBalance">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAccountBalanceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountDetails">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getAccountDetails">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAccountDetailsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccounts">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getAccounts">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAccountsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateCustomer">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="validateCustomer">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="validateCustomerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateAccount">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="validateAccount">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="validateAccountResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateAgentAccount">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="validateAgentAccount">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="validateAgentAccountResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="processMiniStatement">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="processMiniStatement">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="processMiniStatementResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ValidationServiceService">
+    <wsdl:port binding="tns:ValidationServiceSoap11" name="ValidationServiceSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

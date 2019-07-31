@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="ValidationService" targetNamespace="http://ws.validations.bet.datacentre.co.zw/"
+             xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:tns="http://ws.validations.bet.datacentre.co.zw/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <types>
+        <xsd:schema>
+            <xsd:import namespace="http://ws.validations.bet.datacentre.co.zw/"
+                        schemaLocation="ValidationService_schema1.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="processMiniStatement">
+        <part name="parameters" element="tns:processMiniStatementRequest">
+        </part>
+    </message>
+    <message name="processMiniStatementResponse">
+        <part name="parameters" element="tns:processMiniStatementResponse">
+        </part>
+    </message>
+    <message name="getAccountDetails">
+        <part name="parameters" element="tns:getAccountDetailsRequest">
+        </part>
+    </message>
+    <message name="getAccountDetailsResponse">
+        <part name="parameters" element="tns:getAccountDetailsResponse">
+        </part>
+    </message>
+    <message name="validateMobileNumber">
+        <part name="parameters" element="tns:validateMobileNumberRequest">
+        </part>
+    </message>
+    <message name="validateMobileNumberResponse">
+        <part name="parameters" element="tns:validateMobileNumberResponse">
+        </part>
+    </message>
+    <message name="getAccountBalance">
+        <part name="parameters" element="tns:getAccountBalanceRequest">
+        </part>
+    </message>
+    <message name="getAccountBalanceResponse">
+        <part name="parameters" element="tns:getAccountBalanceResponse">
+        </part>
+    </message>
+    <message name="validateAccountResponse">
+        <part name="parameters" element="tns:validateAccountResponse">
+        </part>
+    </message>
+    <message name="getAccounts">
+        <part name="parameters" element="tns:getAccountsRequest">
+        </part>
+    </message>
+    <message name="getAccountsResponse">
+        <part name="parameters" element="tns:getAccountsResponse">
+        </part>
+    </message>
+    <message name="validateAgentAccount">
+        <part name="parameters" element="tns:validateAgentAccountRequest">
+        </part>
+    </message>
+    <message name="validateAgentAccountResponse">
+        <part name="parameters" element="tns:validateAgentAccountResponse">
+        </part>
+    </message>
+    <message name="validateCustomer">
+        <part name="parameters" element="tns:validateCustomerRequest">
+        </part>
+    </message>
+    <message name="validateCustomerResponse">
+        <part name="parameters" element="tns:validateCustomerResponse">
+        </part>
+    </message>
+    <message name="validateAccount">
+        <part name="parameters" element="tns:validateAccountRequest">
+        </part>
+    </message>
+    <portType name="ValidationService">
+        <operation name="validateCustomer">
+            <input message="tns:validateCustomer"
+                   wsam:Action="http://ws.validations.bet.datacentre.co.zw/ValidationService/validateCustomerRequest">
+            </input>
+            <output message="tns:validateCustomerResponse"
+                    wsam:Action="http://ws.validations.bet.datacentre.co.zw/ValidationService/validateCustomerResponse">
+            </output>
+        </operation>
+        <operation name="getAccounts">
+            <input message="tns:getAccounts"
+                   wsam:Action="http://ws.validations.bet.datacentre.co.zw/ValidationService/getAccountsRequest">
+            </input>
+            <output message="tns:getAccountsResponse"
+                    wsam:Action="http://ws.validations.bet.datacentre.co.zw/ValidationService/getAccountsResponse">
+            </output>
+        </operation>
+        <operation name="getAccountBalance">
+            <input message="tns:getAccountBalance"
+                   wsam:Action="http://ws.validations.bet.datacentre.co.zw/ValidationService/getAccountBalanceRequest">
+            </input>
+            <output message="tns:getAccountBalanceResponse"
+                    wsam:Action="http://ws.validations.bet.datacentre.co.zw/ValidationService/getAccountBalanceResponse">
+            </output>
+        </operation>
+        <operation name="getAccountDetails">
+            <input message="tns:getAccountDetails"
+                   wsam:Action="http://ws.validations.bet.datacentre.co.zw/ValidationService/getAccountDetailsRequest">
+            </input>
+            <output message="tns:getAccountDetailsResponse"
+                    wsam:Action="http://ws.validations.bet.datacentre.co.zw/ValidationService/getAccountDetailsResponse">
+            </output>
+        </operation>
+        <operation name="validateAgentAccount">
+            <input message="tns:validateAgentAccount"
+                   wsam:Action="http://ws.validations.bet.datacentre.co.zw/ValidationService/validateAgentAccountRequest">
+            </input>
+            <output message="tns:validateAgentAccountResponse"
+                    wsam:Action="http://ws.validations.bet.datacentre.co.zw/ValidationService/validateAgentAccountResponse">
+            </output>
+        </operation>
+        <operation name="validateAccount">
+            <input message="tns:validateAccount"
+                   wsam:Action="http://ws.validations.bet.datacentre.co.zw/ValidationService/validateAccountRequest">
+            </input>
+            <output message="tns:validateAccountResponse"
+                    wsam:Action="http://ws.validations.bet.datacentre.co.zw/ValidationService/validateAccountResponse">
+            </output>
+        </operation>
+        <operation name="validateMobileNumber">
+            <input message="tns:validateMobileNumber"
+                   wsam:Action="http://ws.validations.bet.datacentre.co.zw/ValidationService/validateMobileNumberRequest">
+            </input>
+            <output message="tns:validateMobileNumberResponse"
+                    wsam:Action="http://ws.validations.bet.datacentre.co.zw/ValidationService/validateMobileNumberResponse">
+            </output>
+        </operation>
+        <operation name="processMiniStatement">
+            <input message="tns:processMiniStatement"
+                   wsam:Action="http://ws.validations.bet.datacentre.co.zw/ValidationService/processMiniStatementRequest">
+            </input>
+            <output message="tns:processMiniStatementResponse"
+                    wsam:Action="http://ws.validations.bet.datacentre.co.zw/ValidationService/processMiniStatementResponse">
+            </output>
+        </operation>
+    </portType>
+    <binding name="ValidationServiceSOAPBinding" type="tns:ValidationService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="validateCustomer">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getAccounts">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getAccountBalance">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getAccountDetails">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="validateAgentAccount">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="validateAccount">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="validateMobileNumber">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="processMiniStatement">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="ValidationService">
+        <port name="ValidationServiceSOAP" binding="tns:ValidationServiceSOAPBinding">
+            <soap:address location="http://manulite.datacentre.co.zw:9080/EQValidationService/ValidationService"/>
+        </port>
+    </service>
+</definitions>
